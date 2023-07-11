@@ -1,0 +1,15 @@
+import difflib
+def autocorrect(word, word_list):
+    closest_match = difflib.get_close_matches(word, word_list, n=1)
+    if closest_match:
+        return closest_match[0]
+    else:
+        return None
+
+# Example usage
+word_list = ["apple", "banana", "cherry", "grape", "orange"]
+
+misspelled_word = "aple"
+corrected_word = autocorrect(misspelled_word, word_list)
+print(f"Original word: {misspelled_word}")
+print(f"Corrected word: {corrected_word}")
